@@ -48,7 +48,7 @@ void loop(void) {
   // 'uid' will be populated with the UID, and uidLength will indicate
   // if the uid is 4 bytes (Mifare Classic) or 7 bytes (Mifare Ultralight)
   success = nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, uid, &uidLength);
-
+  unsigned long startTime = millis();
   if (success) {
     // Display some basic information about the card
     Serial.println("Found an ISO14443A card");
@@ -109,6 +109,8 @@ void loop(void) {
             Serial.println(" unable to read this block");
           }
         }
+        unsigned long elapsedTime = millis() - startTime;
+        Serial.print("Elapsed Time: ");Serial.print(elapsedTime);Serial.println("milliseconds.");
       }
     }
     else
