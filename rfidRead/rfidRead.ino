@@ -109,9 +109,9 @@ void loop(void) {
             Serial.println(" unable to read this block");
           }
         }
-        unsigned long elapsedTime = millis() - startTime;
-        Serial.print("Elapsed Time: ");Serial.print(elapsedTime);Serial.println("milliseconds.");
       }
+      unsigned long elapsedTime = millis() - startTime;
+      Serial.print("Elapsed Time: ");Serial.print(elapsedTime);Serial.println(" milliseconds.");
     }
     else
     {
